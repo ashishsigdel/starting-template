@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer, { resetAll } from "./rootReducer";
+import rootReducer from "./rootReducer";
 
 const appReducer = (state: any, action: any) => {
   if (action.type === "RESET_ALL") {
@@ -14,3 +14,4 @@ export const store = configureStore({
 });
 
 export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
